@@ -1,0 +1,43 @@
+<template>
+    <div class="slds-align_absolute-center">
+    <lightning-card  title={specie.Name} icon-name="custom:custom5">
+        <lightning-button
+         label="View Details"
+          slot="actions"
+          onclick={navigateToRecorViewPage}
+          >
+        </lightning-button>
+        
+        <p class="sld-var-p-horizontal_small">{specie.Description__c}</p>
+        <p>{specie.type__c}</p>
+        <div class="slds-align_absolute-center">
+        <img 
+        class="slds-var-m-around_medium" 
+        src={specie.Image_URL__c} 
+        alt={specie.Name}
+        style="width:20%;"
+        />
+</div>
+<div class="slds-align_absolute-center">
+  <div class="slds-m-horizontal_xx-small">
+<template if:true={isOutdoors}>
+    <lightning-icon
+    icon-name="custom:custom3"
+    alternative-text="Outdoors"
+    title="Outdoors"
+    ></lightning-icon>
+</template>
+</div>
+<div class="slds-m-horizontal_xx-small">
+    <template if:true={isIntdoors}>
+    <lightning-icon
+    icon-name="standard:home"
+    alternative-text="Intdoors"
+    title="Intdoors"
+    ></lightning-icon>
+</template>
+</div>
+</div>
+</lightning-card>
+</div>
+</template>
